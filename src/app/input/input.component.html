@@ -1,0 +1,30 @@
+<form [formGroup]="tipForm" (ngSubmit)="onSubmit()">
+  <label for="price">Price:</label>
+  <input id="price" formControlName="price" type="number">
+  <!--  <div *ngIf="tipForm.get('price')?.invalid && tipForm.get('price')?.touched">-->
+  <!--    Username is required.-->
+  <!--  </div>-->
+  <div>
+    <label><input type="radio" name="choice"
+                  [value]="service_quality.OKEY"
+                  formControlName="radio_choice"
+    > OKEY</label><br>
+    <label><input type="radio" name="choice"
+                  [value]="service_quality.GOOD"
+                  formControlName="radio_choice"
+    > GOOD</label><br>
+    <label><input type="radio" name="choice"
+                  [value]="service_quality.EXCELLENT"
+                  formControlName="radio_choice"
+    > Excellent</label>
+  </div>
+
+  <label for="round">Round up?:</label>
+  <input id="round" type="checkbox" formControlName="round">
+  <!--  <div *ngIf="tipForm.get('round')?.invalid && tipForm.get('round')?.touched">-->
+  <!--    Password must be at least 6 characters.-->
+  <!--  </div>-->
+
+  <button type="submit" [disabled]="!tipForm.valid">Submit</button>
+
+</form>

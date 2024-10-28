@@ -1,0 +1,34 @@
+
+<div class="main">
+  <div class="main_container">
+<form [formGroup]="tipForm" (ngSubmit)="onSubmit()">
+  <label for="price">Price:
+  <input id="price" formControlName="price" type="number"></label>
+
+  <div>
+  <label><input type="radio" name="choice"
+                [value]="service_quality.OKAY"
+                formControlName="radio_choice"
+                > OKAY</label><br>
+  <label><input type="radio" name="choice"
+                [value]="service_quality.GOOD"
+                formControlName="radio_choice"
+               > GOOD</label><br>
+  <label><input type="radio" name="choice"
+                [value]="service_quality.EXCELLENT"
+                formControlName="radio_choice"
+               > EXCELLENT</label>
+  </div>
+
+  <label for="round">Round up?:
+  <input id="round" type="checkbox" formControlName="round"></label>
+
+
+  <button type="submit" [disabled]="!tipForm.valid">Submit</button>
+
+</form>
+</div>
+
+</div>
+
+
